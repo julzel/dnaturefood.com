@@ -1,0 +1,47 @@
+.dna {
+  width: 25vw;
+  min-width: 110px;
+  height: 4.8611111111vw;
+  perspective: 27.7777777778vw;
+  transform-style: preserve-3d;
+}
+
+.ele {
+  width: 0.06944444444vw;
+  height: 4.8611111111vw;
+  float: left;
+  margin: 0 0.5555555556vw;
+  border-left: 0.06944444444vw #B0B0B0 dashed;
+  position: relative;
+  transform: rotateX(-360deg);
+  animation: run 2s linear infinite;
+  &:before,
+  &:after {
+    content: '';
+    width: 0.6944444444vw;
+    height: 0.6944444444vw;
+    background: #9ec2c6;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &:before {
+    top: -0.1388888889vw;
+    background: #B7642c;
+  }
+  &:after {
+    bottom: -0.1388888889vw;
+  }
+  @for $i from 1 through 20 {
+    &:nth-of-type(#{$i}) {
+      animation-delay: 3s/20*$i*-1;
+    }
+  }
+}
+
+@keyframes run {
+  to {
+    transform: none;
+  }
+}
