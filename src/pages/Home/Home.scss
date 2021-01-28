@@ -1,0 +1,30 @@
+.home {
+  .scroller {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .spinner {
+
+    @media (min-width: 767px) {
+      transform: translateY(-30px);
+    }
+  }
+
+  &-logo {
+    min-width: 320px;
+    width: 80vw;
+    transform-origin: center;
+    transition: transform 250ms linear;
+
+    @media (min-width: 767px) {
+      min-width: 700px;
+      max-width: 860px;
+    }
+  }
+}
