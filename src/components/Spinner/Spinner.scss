@@ -1,0 +1,54 @@
+.spinner {
+  transform-style: preserve-3d;
+
+  .ele {
+    float: left;
+    margin: 0 6px;
+    border-left: 1px #B0B0B0 dashed;
+    position: relative;
+    transform: rotateX(-360deg);
+    animation: run 2.5s linear infinite;
+    height: 50px;
+
+    @media (min-width: 767px) {
+      margin: 0 9px;
+      height: 65px;
+    }
+    
+    &:before,
+    &:after {
+      content: '';
+      background: #9ec2c6;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(calc(-50% - 1px));
+      width: 7px;
+      height: 7px;
+
+      @media (min-width: 767px) {
+        width: 10px;
+        height: 10px;
+      }
+    }
+    &:before {
+      background: #B7642c;
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+    }
+  
+    @for $i from 1 through 20 {
+      &:nth-of-type(#{$i}) {
+        animation-delay: 3s/20*$i*-1;
+      }
+    }
+  }
+}
+
+@keyframes run {
+  to {
+    transform: none;
+  }
+}
