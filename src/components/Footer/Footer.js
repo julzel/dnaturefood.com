@@ -6,11 +6,10 @@ import './Footer.scss';
 const Footer = () => {
   return (
     <footer className="footer">
-      <nav>
-        <a href="https://www.instagram.com/dnaturecr/" target="_blank" rel="noreferrer">
-          <i className="fab fa-instagram" /> <span>Síguenos en Instagram</span>
-        </a>
-      </nav>
+      <div>
+        <p>DNAture Alimentación Natural R.L.</p>
+        <p>Costa Rica 🇨🇷 | {new Date().getFullYear()}.</p>
+      </div>
     </footer>
   );
 }
