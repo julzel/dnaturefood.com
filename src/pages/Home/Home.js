@@ -59,8 +59,13 @@ const Home = () => {
           <i className="fab fa-instagram" /> <span>Síguenos en Instagram</span>
         </a>
       </div>
+<<<<<<< HEAD
       <div className="home-banner">
         <h2>Elige mejor</h2>
+=======
+      <div className="home-banner" ref={bannerRef}>
+        <h2>Elige<br /><span>mejor</span></h2>
+>>>>>>> static-site-layout
       </div>
       <div className="home-services">
         <h2>Nuestros Servicios</h2>
