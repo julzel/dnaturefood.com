@@ -1,10 +1,8 @@
 body {
-  font-family: "Helvetica Neue Pro";
-  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100);
-  overflow: hidden;
+  font-family: "OpenSans";
 }
 
-.page {
-  height: 100%;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue Pro";
+  line-height: 1;
 }

@@ -7,18 +7,18 @@ const Scroller = ({ children, getScrollStatus }) => {
   const [touchStart, setTouchStart] = useState(null);
 
   const handleTouchStart = e => {
-    const { screenY } = e.touches[0];
-    setTouchStart({ screenY });
+    const { clientY } = e.touches[0];
+    setTouchStart({ clientY });
   };
 
   const handleTouchMove = e => {
-    const { screenY } = e.touches[0];
-    if (touchStart.screenY < screenY) {
-      getScrollStatus(1);
-    } else if (touchStart.screenY > screenY) {
+    const { clientY } = e.touches[0];
+    if (touchStart.clientY < clientY) {
       getScrollStatus(-1);
+    } else if (touchStart.clientY >= clientY) {
+      getScrollStatus(1);
     }
-    setTouchStart({ screenY });
+    setTouchStart({ clientY });
   };
 
   const handleWheel = e => {
@@ -31,7 +31,7 @@ const Scroller = ({ children, getScrollStatus }) => {
   };
 
   const handleTouchEnd = () => {
-    getScrollStatus(null);
+    getScrollStatus(0);
   };
 
   return (

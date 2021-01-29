@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,17 +13,22 @@ import Home from './pages/Home/Home';
 import Layout from './components/Layout/Layout';
 
 const App = () => {
+  const [initialWidth, setInitialWidth] = useState(null);
 
-  const appInit = () => {
-    let vh = window.innerHeight * 0.01;
-    window.document.documentElement.style.setProperty('--vh', `${vh}px`);
-  }
+  const appInit = useCallback(() => {
+    if (!initialWidth || initialWidth !== window.innerWidth) {
+      let vh = window.innerHeight * 0.01;
+      window.document.documentElement.style.setProperty('--vh', `${vh}px`);
+      setInitialWidth(window.innerWidth);
+    }
+  }, [initialWidth]);
 
   useEffect(() => {
     appInit();
+
     window.addEventListener('resize', appInit);
     return () => window.removeEventListener('resize', appInit);
-  }, []);
+  }, [appInit]);
 
   return (
     <Router>

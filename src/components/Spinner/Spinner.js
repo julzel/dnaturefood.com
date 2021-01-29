@@ -11,7 +11,7 @@ for(let i = 0; i < 18; i++) {
 const Spinner = () => {
 
   return (
-    <div class="spinner">
+    <div className="spinner">
       {edges.map(edge => <div className="ele" key={edge} />)}
     </div>
   );

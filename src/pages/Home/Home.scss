@@ -1,18 +1,42 @@
 .home {
-  .scroller {
-    width: 100%;
-    height: 100%;
+  .spinner {
+
+    @media (min-width: 767px) {
+      transform: translateY(-70px);
+    }
+  }
+
+  &-hero {
+    background-color: #002b36;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
     color: white;
-  }
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: 568px;
+    transition: height 200ms ease;
 
-  .spinner {
+    a {
+      margin-top: 50px;
+      color: white;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
 
-    @media (min-width: 767px) {
-      transform: translateY(-30px);
+      @media (min-width: 767px) {
+        margin-top: 0;
+      }
+
+      i {
+        font-size: 25px;
+        margin-right: 10px;
+      }
+
+      span {
+        font-family: "OpenSans";
+      }
     }
   }
 
@@ -27,4 +51,86 @@
       max-width: 860px;
     }
   }
+
+  &-services {
+    padding: 50px 0;
+    background-color: white;
+
+    @media (min-width: 767px) {
+      padding: 150px 0;
+    }
+    
+    h2 {
+      font-size: 35px;
+      color: #9ec2c6;
+      text-align: center;
+
+      @media (min-width: 767px) {
+        font-size: 45px;
+      }
+    }
+
+    h3 {
+      color: #9a9648;
+      line-height: 1.2;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 25px;
+
+      @media (min-width: 767px) {
+        font-size: 30px;
+      }
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+
+  &-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 50px;
+
+    @media (min-width: 767px) {
+      padding: 60px 50px;
+    }
+  }
+
+  &-col {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 20px;
+    width: 100%;
+    opacity: 0;
+    text-align: center;
+
+    @media (min-width: 767px) {
+      margin: 10px 20px;
+      width: 50%;
+      max-width: 500px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 30%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  // &-col-1 {
+  //   background-image: url("../../assets/images/alimentacion.jpg");
+  // }
+  // &-col-2 {
+  //   background-image: url("../../assets/images/expediente.jpg");
+  // }
+  // &-col-3 {
+  //   background-image: url("../../assets/images/cursos.jpg");
+  // }
 }
