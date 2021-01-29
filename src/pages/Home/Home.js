@@ -5,7 +5,7 @@ import Svg from 'react-inlinesvg';
 import './Home.scss';
 import Logo from '../../assets/images/dnature-logo.svg';
 import imgCol1 from '../../assets/images/alimentacion.jpg'
-import imgCol2 from '../../assets/images/expediente.jpg'
+import imgCol2 from '../../assets/images/lucas.png'
 import imgCol3 from '../../assets/images/comportamiento.jpg'
 import Spinner from '../../components/Spinner/Spinner';
 
@@ -18,6 +18,7 @@ const Home = () => {
   const col1Ref = useRef(null);
   const col2Ref = useRef(null);
   const col3Ref = useRef(null);
+  const bannerRef = useRef(null);
 
   const handleHomeScroll = () => {
     if (isMobile) {
