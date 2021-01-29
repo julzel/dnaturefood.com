@@ -4,9 +4,9 @@ import Svg from 'react-inlinesvg';
 // local imports
 import './Home.scss';
 import Logo from '../../assets/images/dnature-logo.svg';
-import imgCol1 from '../../assets/images/alimentacion.jpg'
-import imgCol2 from '../../assets/images/lucas.png'
-import imgCol3 from '../../assets/images/comportamiento.jpg'
+import imgCol1 from '../../assets/images/nutricion.jpg';
+import imgCol2 from '../../assets/images/expediente.jpg';
+import imgCol3 from '../../assets/images/cursos.jpg';
 import Spinner from '../../components/Spinner/Spinner';
 
 let color1Opacity = 0;
